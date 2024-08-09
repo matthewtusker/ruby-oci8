@@ -585,7 +585,7 @@ class OCI8
   end
 end
 
-class OCIError
+class OCIError < StandardError
 
   # @overload initialize(message, error_code = nil, sql_stmt = nil, parse_error_offset = nil)
   #   Creates a new OCIError object with specified parameters.
@@ -617,7 +617,7 @@ class OCIError
   #     # => #<OCIError: ORA-04043: object %s does not exist>
   #     # When NLS_LANG=german_germany.AL32UTF8
   #     # => #<OCIError: ORA-04043: Objekt %s ist nicht vorhanden>
-  #     
+  #
   #     # with one parameter
   #     OCIError.new(4043, 'table_name')
   #     # When NLS_LANG=american_america.AL32UTF8
